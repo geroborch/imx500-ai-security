@@ -1,0 +1,21 @@
+[Unit]
+Description=KI Smart Cam Service
+After=network-online.target remote-fs.target
+Wants=network-online.target
+[Service]
+Type=simple
+ExecStartPre=/bin/sleep 30
+ExecStart=/usr/bin/python3 -u /home/XXX/smart_cam.py    // adjust
+Restart=always
+RestartSec=10
+User=XXX                                                // adjust
+WorkingDirectory=/home/XXX                              // adjust
+[Install]
+WantedBy=multi-user.target
+
+
+
+
+
+
+s
